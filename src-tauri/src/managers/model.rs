@@ -1138,7 +1138,9 @@ impl ModelManager {
                 supports_language_selection: true,
                 is_custom: false,
                 supports_streaming: false,
-                supports_language_detection: true,
+                // Cohere Transcribe has no language auto-detect; without an
+                // explicit language it silently decodes as English.
+                supports_language_detection: false,
             },
         );
 
